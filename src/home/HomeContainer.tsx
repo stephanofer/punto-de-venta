@@ -1,10 +1,10 @@
+import HomeMain from "./components/HomeMain";
+
 function HomeContainer() {
   console.log("C: Home");
 
   return (
-    <div className="h-full">
-      <h1>Hola Mundo</h1>
-    </div>
+    <HomeMain/>
   );
 }
 export default HomeContainer;

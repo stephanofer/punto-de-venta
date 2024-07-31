@@ -10,14 +10,11 @@ type PropsLayout ={
 
 function LayoutContainer({ children }: PropsLayout) {
   console.log("C: Layout");
-  
   return (
     <>
-    <div className='areas'>
-    <NavBar/>
-    {children ?? <Outlet/>}
+    <NavBar />
+    {children ?? <Outlet  />}
     <Footer/>
-    </div>
     </>
   )
 }
