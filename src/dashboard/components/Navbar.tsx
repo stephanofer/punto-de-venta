@@ -7,39 +7,44 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link } from "react-router-dom";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ModeToggle } from "@/ModeToggle";
-import {LinkUri} from '@/types'
+import { LinkUri } from "@/types";
+import { HamburgerMenuIcon, ArchiveIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom";
 
-
-export function NavBar() {
-  console.log("C: NavBar");
+export function Navbar() {
+  console.log("C: NavBar Dashboard");
 
   const links: LinkUri[] = [
     {
-      label: "Inicio",
+      label: "Productos",
       uri: "/",
     },
     {
-      label: "Servicios",
+      label: "Ordenes",
       uri: "/",
     },
     {
-      label: "Nosotros",
+      label: "Ventas",
+      uri: "/",
+    },
+    {
+      label: "Inventario",
+      uri: "/",
+    },
+    {
+      label: "Reportes",
       uri: "/",
     },
   ];
 
   return (
     <header className="flex flex-row w-full bg-background sticky top-0 border-b h-20  px-4 items-center text-foreground">
-      <div className="flex flex-grow basis-0">
-        <Link className="text-lg font-bold truncate" to={"/"}>
-          Punto de Venta
+      <nav className="flex flex-grow basis-0 items-center">
+        <Link className="text-lg font-bold truncate" to={"/dashboard"}>
+          <ArchiveIcon className="w-6 h-6 mr-3" />
         </Link>
-      </div>
-      <nav>
-        <ul className="hidden md:flex flex-row">
+        <ul className="hidden md:flex flex-row text-md">
           {links.map((link) => (
             <li>
               <Link
@@ -54,9 +59,6 @@ export function NavBar() {
       </nav>
       <nav className="hidden md:flex md:flex-grow md:justify-end md:basis-0">
         <div className="ml-2 md:flex flex-row items-center">
-          <Link to={"/login"}>
-            <Button variant={"outline"} size={"sm"} className="mr-2"> Ingresar</Button>
-          </Link>
           <ModeToggle />
         </div>
       </nav>
