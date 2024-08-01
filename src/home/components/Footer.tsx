@@ -1,4 +1,4 @@
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-background text-foreground border-t h-[80px] flex items-center justify-center ">
       <div className="text-md text-muted-foreground">

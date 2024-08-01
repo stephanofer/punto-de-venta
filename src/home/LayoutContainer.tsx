@@ -1,14 +1,14 @@
 import { ReactNode } from 'react'
 import {Outlet} from 'react-router-dom'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
+import {NavBar} from './components/NavBar'
+import {Footer} from './components/Footer'
 
 
 type PropsLayout ={
   children?: ReactNode,  
 }
 
-function LayoutContainer({ children }: PropsLayout) {
+export function LayoutContainer({ children }: PropsLayout) {
   console.log("C: Layout");
   return (
     <>
@@ -18,4 +18,3 @@ function LayoutContainer({ children }: PropsLayout) {
     </>
   )
 }
-export default LayoutContainer

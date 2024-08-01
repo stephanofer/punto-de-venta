@@ -1,10 +1,9 @@
-import HomeMain from "./components/HomeMain";
+import {HomeMain} from "./components/HomeMain";
 
-function HomeContainer() {
+export function HomeContainer() {
   console.log("C: Home");
 
   return (
     <HomeMain/>
   );
 }
-export default HomeContainer;

@@ -1,5 +1,6 @@
 import LoginForm from './components/LoginForm'
-function LoginContainer() {
+
+export function LoginContainer() {
   console.log("C: Login");
 
   return (
@@ -7,4 +8,3 @@ function LoginContainer() {
   );
 }
 
-export default LoginContainer;

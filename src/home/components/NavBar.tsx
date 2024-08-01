@@ -15,7 +15,7 @@ type Link = {
   uri: string;
 };
 
-export default function Navbar() {
+export function NavBar() {
   console.log("C: NavBar");
 
   const links: Link[] = [
@@ -34,13 +34,12 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="flex flex-row w-full bg-background border-b h-20 sticky px-4 items-center text-foreground">
+    <header className="flex flex-row w-full bg-background sticky top-0 border-b h-20  px-4 items-center text-foreground">
       <div className="flex flex-grow basis-0">
         <Link className="text-lg font-bold truncate" to={"/"}>
           Punto de Venta
         </Link>
       </div>
-
       <nav>
         <ul className="hidden md:flex flex-row">
           {links.map((link) => (
