@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/sheet";
 import { ModeToggle } from "@/ModeToggle";
 import { LinkUri } from "@/types";
-import { HamburgerMenuIcon, ArchiveIcon } from "@radix-ui/react-icons";
 import { Link } from "react-router-dom";
+import {PackageCheck, Menu} from 'lucide-react'
 
 export function Navbar() {
   console.log("C: NavBar Dashboard");
@@ -39,14 +39,14 @@ export function Navbar() {
   ];
 
   return (
-    <header className="flex flex-row w-full bg-background sticky top-0 border-b h-20  px-4 items-center text-foreground">
+    <header className="flex flex-row w-full bg-background sticky top-0 border-b h-16  px-4 items-center text-foreground">
       <nav className="flex flex-grow basis-0 items-center">
         <Link className="text-lg font-bold truncate" to={"/dashboard"}>
-          <ArchiveIcon className="w-6 h-6 mr-3" />
+          <PackageCheck className="w-6 h-6 mr-3" />
         </Link>
         <ul className="hidden md:flex flex-row text-md">
           {links.map((link) => (
-            <li>
+            <li key={link.label}>
               <Link
                 className="inline-block px-4 py-2 hover:bg-primary/10 rounded-md "
                 to={link.uri}
@@ -65,7 +65,7 @@ export function Navbar() {
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="md:hidden">
-            <HamburgerMenuIcon className="h-6 w-6" />
+            <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
         <div className="ml-2  md:hidden">
@@ -81,12 +81,14 @@ export function Navbar() {
 
           <div className="flex flex-col space-y-4 p-4">
             {links.map((link) => (
-              <Link
-                to={link.uri}
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
+              <li key={link.label}>
+                <Link
+                  to={link.uri}
+                  className="text-sm font-medium hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
             ))}
           </div>
         </SheetContent>

@@ -10,8 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ModeToggle } from "@/ModeToggle";
-import {LinkUri} from '@/types'
-
+import { LinkUri } from "@/types";
 
 export function NavBar() {
   console.log("C: NavBar");
@@ -41,7 +40,7 @@ export function NavBar() {
       <nav>
         <ul className="hidden md:flex flex-row">
           {links.map((link) => (
-            <li>
+            <li key={link.label}>
               <Link
                 className="inline-block px-4 py-2 hover:bg-primary/10 rounded-md "
                 to={link.uri}
@@ -55,7 +54,10 @@ export function NavBar() {
       <nav className="hidden md:flex md:flex-grow md:justify-end md:basis-0">
         <div className="ml-2 md:flex flex-row items-center">
           <Link to={"/login"}>
-            <Button variant={"outline"} size={"sm"} className="mr-2"> Ingresar</Button>
+            <Button variant={"outline"} size={"sm"} className="mr-2">
+              {" "}
+              Ingresar
+            </Button>
           </Link>
           <ModeToggle />
         </div>
@@ -79,12 +81,14 @@ export function NavBar() {
 
           <div className="flex flex-col space-y-4 p-4">
             {links.map((link) => (
-              <Link
-                to={link.uri}
-                className="text-sm font-medium hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
+              <li key={link.label}>
+                <Link
+                  to={link.uri}
+                  className="text-sm font-medium hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
             ))}
           </div>
         </SheetContent>
