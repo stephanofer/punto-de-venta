@@ -18,23 +18,23 @@ export function Navbar() {
   const links: LinkUri[] = [
     {
       label: "Productos",
-      uri: "/",
+      uri: "/dashboard",
     },
     {
       label: "Ordenes",
-      uri: "/",
+      uri: "/dashboard",
     },
     {
       label: "Ventas",
-      uri: "/",
+      uri: "/dashboard",
     },
     {
       label: "Inventario",
-      uri: "/",
+      uri: "/dashboard",
     },
     {
       label: "Reportes",
-      uri: "/",
+      uri: "/dashboard",
     },
   ];
 

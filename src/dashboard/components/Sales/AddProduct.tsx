@@ -201,7 +201,7 @@ export function AddProduct() {
               </Label>
               <Input
                 id="username"
-                defaultValue="@peduarte"
+                defaultValue={selectedProduct?.name}
                 className="col-span-3"
               />
             </div>
